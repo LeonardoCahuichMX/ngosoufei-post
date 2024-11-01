@@ -1,0 +1,39 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{site.title}}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  
+    <link id="theme-pag" rel="stylesheet" href="{{ "/assets/cahuich-css/base/bluids/light.css" | relative_url }}">
+  
+    <meta name="description" content="">
+  
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
+  
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+  
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fff">
+
+    {% seo %}
+    
+    <script>
+      function insertar(id, variable) {
+        document.getElementById(id).innerHTML += variable;
+      }
+  
+      webSiteData = {
+        name: 'Ngo Soufei',
+        nameMarquet: 'Ngo <b>Soufei</b>',
+        author: 'Leonardo Cahuich',
+        dev: 'Leonardo Cahuich',
+        pesoApp: '885 kb',
+      }
+    </script>
+  </head>

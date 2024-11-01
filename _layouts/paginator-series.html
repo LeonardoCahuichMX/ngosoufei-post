@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<script>
+  /*<alert("hola");
+  $('body').addClass('home');*/
+  var elemento = document.querySelectorAll("body");
+  for (var i = 0; i < elemento.length; i++) {
+    elemento[i].classList.add("page-white");
+  }
+</script>
+<div class="pagina blog">
+<section class="titulo-seccion titulo">
+    Series
+</section>
+
+<div class="seccion-5">
+    <div class="contenedor">
+        {% if site.series.size > 0 %}
+        {% for item in paginator.posts %}
+
+        <div class="caja" onclick="window.location.href = '{{ site.baseurl }}{{ item.url | relative_url }}';">
+            <div class="contenido"></div>
+            <div class="titulo"><a href='{{ site.baseurl }}{{ item.url | relative_url }}'>{{ item.title | escape }}</a></div>
+        </div>
+
+        {% endfor %}
+        {% else %}
+        <p>No hay posts con el tag 'Publicaciones'.</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Pagination links -->
+<div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">
+        Anterior
+      </a>
+    {% else %}
+      <span class="previous">Anterior</span>
+    {% endif %}
+    <span class="page_number ">
+      Pagina: {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Siguiente</a>
+    {% else %}
+      <span class="next ">Siguiente</span>
+    {% endif %}
+  </div>
+</div>
